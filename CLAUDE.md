@@ -36,7 +36,7 @@ includes this repo as a git submodule and builds the UI itself.
 - **Writes** go through `useAction` (`src/actions.ts`): runs the mutation, shows its messages via
   `src/notifications.tsx` (Django-messages semantics: on this page, or on the next one after a navigating action),
   invalidates every query (so sidebar counters refresh), and exposes field errors via `fieldErrors(error, name)`.
-- **Catalog** (`/catalog/`, `/api/catalog/`): every CardTrader product (cards, sealed, accessories). It is the only
+- **Catalog** (`/catalog/`, `/api/catalog/`): every Cardmarket product (cards, sealed, accessories). It is the only
   way to add by hand: a row's "Add" opens `AddFromCatalog` (price prefilled with the Cardmarket trend).
 - **Dialogs in the URL** (`hooks/useDialogParam.ts`): a collection row's pencil opens `ItemDialog` (`?edit=<pk>`:
   only the copies — condition, language, foil, quantity, price; products have no condition or foil), its tag opens

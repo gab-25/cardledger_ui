@@ -20,7 +20,6 @@ export type Me = {
 
 export type Account = {
   cardtrader: { name: string; last_sync: string | null; token_saved: boolean };
-  shares_token: boolean;
   /** The password rules, shown under "New password". */
   password_help: string[];
 };

@@ -99,7 +99,7 @@ function queryOf(f: Form) {
   return params;
 }
 
-/** The catalog: every CardTrader product (formerly ledger/cards.html). */
+/** The catalog: every Cardmarket product (formerly ledger/cards.html). */
 export default function CatalogPage() {
   useDocumentTitle("Catalog");
   const [params] = useSearchParams();
@@ -156,7 +156,7 @@ export default function CatalogPage() {
 
   return (
     <>
-      <PageHead eyebrow="CardTrader catalog" title="Catalog" />
+      <PageHead eyebrow="Cardmarket catalog" title="Catalog" />
 
       <TablePanel
         label="Products"

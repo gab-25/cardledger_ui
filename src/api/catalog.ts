@@ -1,4 +1,5 @@
-// /api/catalog/: every CardTrader product (cards, sealed products, accessories) with Cardmarket prices.
+// /api/catalog/: every Cardmarket product (cards, sealed products, accessories) with Cardmarket prices; ct_id holds
+// the Cardmarket product id (the field name is kept for compatibility).
 import type { Page } from "./collection";
 import { request } from "./client";
 
