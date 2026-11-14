@@ -169,7 +169,7 @@ function PasswordForm({ help }: { help: string[] }) {
 }
 
 function CardTraderSection({ account }: { account: Account }) {
-  const { cardtrader, shares_token: shares } = account;
+  const { cardtrader } = account;
   const [token, setTokenValue] = useState("");
   const connect = useAction(setToken);
   const remove = useAction(() => removeToken());
@@ -181,10 +181,9 @@ function CardTraderSection({ account }: { account: Account }) {
 
   function confirmRemove(e: FormEvent) {
     e.preventDefault();
-    const question = shares
-      ? "Disconnect CardTrader? Catalog, prices and scanning will stop for everyone until a new token is added."
-      : "Disconnect CardTrader? Publishing and syncing will stop until a new token is added.";
-    if (window.confirm(question)) remove.mutate();
+    if (window.confirm("Disconnect CardTrader? Publishing and syncing will stop until a new token is added.")) {
+      remove.mutate();
+    }
   }
 
   return (
@@ -195,7 +194,7 @@ function CardTraderSection({ account }: { account: Account }) {
           <div>
             <div className={cn(PROFILE_NAME, "text-[22px]")}>{cardtrader.name}</div>
             <div className={SUB}>
-              Publishes your listings, imports orders and market prices.{" "}
+              Publishes your listings and imports orders.{" "}
               {cardtrader.last_sync ? `Last sync ${naturaltime(cardtrader.last_sync)}.` : "Never synced."}
             </div>
           </div>
@@ -205,13 +204,6 @@ function CardTraderSection({ account }: { account: Account }) {
             <Badge variant="pending"><span className="size-2 rounded-full bg-current" aria-hidden="true" />Not connected</Badge>
           )}
         </div>
-
-        {shares && (
-          <p className={cn(HINT, "m-0")}>
-            As the administrator, your token is also used to load the card catalog and prices for every user, and to
-            recognise their scanned cards.
-          </p>
-        )}
 
         <form method="post" className="m-0 flex flex-wrap items-start gap-2.5" noValidate onSubmit={submit}>
           <div className="flex-[1_1_200px]">

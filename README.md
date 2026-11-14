@@ -8,7 +8,7 @@ mtg_ledger_core serves the built app (same origin, same login: `index.html` for 
 
 ### Scanning
 
-Frame a card with the phone: it is recognised, matched against the CardTrader catalog and added to a draft you
+Frame a card with the phone: it is recognised, matched against the card catalog (Cardmarket + Scryfall) and added to a draft you
 review and save into the collection.
 
 - **No page reloads**: start, camera, confirm/search and review all happen in one page.

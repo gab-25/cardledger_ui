@@ -9,7 +9,7 @@ vi.mock("../api/account");
 
 function account(over: Partial<Account> = {}): Account {
   return {
-    cardtrader: { name: "CardTrader", last_sync: null, token_saved: false }, shares_token: false,
+    cardtrader: { name: "CardTrader", last_sync: null, token_saved: false },
     password_help: ["Your password must contain at least 8 characters."], ...over,
   };
 }
@@ -90,10 +90,9 @@ describe("ProfilePage", () => {
     expect(screen.getByLabelText("CardTrader API token")).toHaveValue("");
   });
 
-  it("an admin's saved token: warning, replace and remove with the right question", async () => {
+  it("an admin's saved token is their own: replace and remove with the right question", async () => {
     vi.mocked(api.getAccount).mockResolvedValue(account({
       cardtrader: { name: "CardTrader", last_sync: new Date(Date.now() - 5 * 60000).toISOString(), token_saved: true },
-      shares_token: true,
     }));
     vi.mocked(api.removeToken).mockResolvedValue(ok("CardTrader token removed."));
     const confirm = vi.fn().mockReturnValue(true);
@@ -101,11 +100,11 @@ describe("ProfilePage", () => {
     renderPage("/account/");
     expect(await screen.findByText("Connected")).toHaveAttribute("data-variant", "ok");
     expect(screen.getByText(/Last sync 5 minutes ago\./)).toBeInTheDocument();
-    expect(screen.getByText(/also used to load the card catalog and prices for every user/)).toBeInTheDocument();
+    expect(screen.queryByText(/for every user/)).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Replace token" })).toBeInTheDocument();
     await userEvent.click(screen.getByRole("button", { name: "Remove token" }));
     expect(confirm).toHaveBeenCalledWith(
-      "Disconnect CardTrader? Catalog, prices and scanning will stop for everyone until a new token is added.",
+      "Disconnect CardTrader? Publishing and syncing will stop until a new token is added.",
     );
     expect(await screen.findByText("CardTrader token removed.")).toBeInTheDocument();
   });
