@@ -30,7 +30,7 @@ export type CatalogPage = Page<Printing> & { prices_date: string | null };
 
 /**
  * A search (`searched: true`), or, with no filters, the latest releases: products of the newest sets first
- * (gab-25/mtg_ledger_core#30). A backend without that sends only `searched` and `filters`.
+ * (gab-25/cardledger_core#30). A backend without that sends only `searched` and `filters`.
  */
 export type CatalogSearch =
   | ({ searched: false; filters: CatalogFilters } & (CatalogPage | { results?: undefined }))

@@ -65,7 +65,7 @@ describe("CatalogPage", () => {
     expect(screen.getByText(/sealed products and accessories/i)).toBeInTheDocument();
     expect(screen.queryByRole("table")).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Clear" })).not.toBeInTheDocument();
-    expect(document.title).toBe("Catalog · MTG Ledger");
+    expect(document.title).toBe("Catalog · CardLedger");
   });
 
   it("before searching lists the latest releases", async () => {

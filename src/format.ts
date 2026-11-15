@@ -1,4 +1,4 @@
-// Number and date formatting matching the Django templates of mtg_ledger_core (en-us, TIME_ZONE Europe/Rome):
+// Number and date formatting matching the Django templates of cardledger_core (en-us, TIME_ZONE Europe/Rome):
 // intcomma, floatformat:"0g"/"2g", date:"j M Y", naturalday, naturaltime, capfirst, pluralize.
 
 export const TIME_ZONE = "Europe/Rome";

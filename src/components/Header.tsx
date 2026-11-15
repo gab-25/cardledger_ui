@@ -18,14 +18,14 @@ export function PageHead({ eyebrow, title, meta, actions }: { eyebrow?: ReactNod
   );
 }
 
-/** The top of every non-camera screen: app name and the way back to mtg_ledger_core (no sidebar). */
+/** The top of every non-camera screen: app name and the way back to cardledger_core (no sidebar). */
 export default function Header({ eyebrow, title, actions }: { eyebrow?: ReactNode; title: ReactNode; actions?: ReactNode }) {
   return (
     <>
       <nav className="flex items-center justify-between gap-3" aria-label="Main navigation">
         <a className="flex items-center gap-3 text-foreground no-underline hover:text-foreground" href="/">
           <Logo />
-          <span className="font-serif text-[22px] font-bold tracking-[.2px]">MTG Ledger</span>
+          <span className="font-serif text-[22px] font-bold tracking-[.2px]">CardLedger</span>
         </a>
         <Button asChild variant="ghost" size="sm">
           <a href="/">

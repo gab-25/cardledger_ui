@@ -49,7 +49,7 @@ describe("SyncPage", () => {
     expect(within(first).getByText("Nov 4 18:05:09")).toHaveAttribute("datetime", "2026-11-04T17:05:09Z");
     expect(first.querySelector("[data-slot=log-dot]")).toHaveAttribute("data-tone", "warn");
     expect(within(first).getByText("Warning")).toHaveClass("sr-only");
-    expect(document.title).toBe("Sync · MTG Ledger");
+    expect(document.title).toBe("Sync · CardLedger");
   });
 
   it("in sync, token missing, no conflicts, no activity", async () => {

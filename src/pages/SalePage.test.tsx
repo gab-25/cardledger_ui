@@ -50,7 +50,7 @@ describe("SalePage", () => {
     expect(edit).toHaveAttribute("href", "/sale/?sell=7");
     expect(edit).toHaveTextContent("Edit");
     expect(screen.getByRole("link", { name: "All" })).toHaveAttribute("aria-current", "true");
-    expect(document.title).toBe("For sale · MTG Ledger");
+    expect(document.title).toBe("For sale · CardLedger");
   });
 
   it("filters by status and shows foil and copies", async () => {

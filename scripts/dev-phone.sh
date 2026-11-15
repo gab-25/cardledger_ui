@@ -53,10 +53,10 @@ else
 fi
 if [[ "$code" == "000" ]]; then
   [[ -n "${port:-}" ]] || die "${DJANGO_URL} is not reachable."
-  die "mtg_ledger_core is not running on port ${port}: start it with 'uv run python manage.py runserver ${port}'."
+  die "cardledger_core is not running on port ${port}: start it with 'uv run python manage.py runserver ${port}'."
 fi
 if [[ -n "${port:-}" && "$code" == "400" ]]; then
-  die "mtg_ledger_core refuses the tailnet address. Put these lines in mtg_ledger_core's .env and restart runserver:
+  die "cardledger_core refuses the tailnet address. Put these lines in cardledger_core's .env and restart runserver:
   DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,${dns}
   DJANGO_CSRF_TRUSTED_ORIGINS=https://${dns}
   DJANGO_BEHIND_HTTPS_PROXY=true"
@@ -70,7 +70,7 @@ trap cleanup EXIT
 
 cat <<INFO
 
-  MTG Ledger with the live UI is on your tailnet:  https://${dns}
+  CardLedger with the live UI is on your tailnet:  https://${dns}
 
   Open it on the computer, start a session in Scan cards and scan the QR code with the phone
   (Tailscale on). Saving a file in src/ reloads the page on the phone.

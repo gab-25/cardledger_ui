@@ -41,7 +41,7 @@ describe("ProfilePage", () => {
     expect(screen.getByRole("button", { name: "Connect" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Remove token" })).not.toBeInTheDocument();
     expect(screen.queryByText(/also used to load the card catalog/)).not.toBeInTheDocument();
-    expect(document.title).toBe("Profile · MTG Ledger");
+    expect(document.title).toBe("Profile · CardLedger");
   });
 
   it("saves the details; errors stay under the field", async () => {

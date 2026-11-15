@@ -15,7 +15,7 @@ import CameraScreen from "./screens/CameraScreen";
 import ReviewScreen from "./screens/ReviewScreen";
 import StartScreen from "./screens/StartScreen";
 
-// Served by mtg_ledger_core for every page URL; the app routes on the client. Page URLs are the ones of the
+// Served by cardledger_core for every page URL; the app routes on the client. Page URLs are the ones of the
 // former Django pages. Scan: /scan/ start, /scan/<uuid>/ camera, /scan/<uuid>/review/ review (no sidebar).
 export default function App() {
   return (

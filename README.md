@@ -1,9 +1,9 @@
-# mtg_ledger_ui
+# cardledger_ui
 
-MTG Ledger UI — the web interface of [MTG Ledger](https://github.com/gab-25/mtg_ledger_core), as a React
+CardLedger UI — the web interface of [CardLedger](https://github.com/gab-25/cardledger_core), as a React
 single-page app: collection, sale listings, card database, shipments, sync, profile and the camera scan.
 
-mtg_ledger_core serves the built app (same origin, same login: `index.html` for every page URL, assets under
+cardledger_core serves the built app (same origin, same login: `index.html` for every page URL, assets under
 `/static/ui/`) and does the work through its JSON API under `/api/`.
 
 ### Scanning
@@ -17,7 +17,7 @@ review and save into the collection.
 - One card at a time: an uncertain card opens the confirm panel over the camera right away.
 
 The scan screens use the API under `/api/scan/` — see
-[gab-25/mtg_ledger_core#10](https://github.com/gab-25/mtg_ledger_core/issues/10) for the contract.
+[gab-25/cardledger_core#10](https://github.com/gab-25/cardledger_core/issues/10) for the contract.
 
 ## Structure
 
@@ -52,7 +52,7 @@ npm run typecheck
 Copy `.env.example` to `.env` if you need another backend (`DJANGO_URL`, default `http://127.0.0.1:8000`; e.g. production) or port
 (`VITE_PORT`, default 5173).
 
-Run mtg_ledger_core (`uv run python manage.py runserver` in its checkout), then:
+Run cardledger_core (`uv run python manage.py runserver` in its checkout), then:
 
 ```bash
 npm run dev
@@ -69,7 +69,7 @@ The camera needs HTTPS and a phone. `npm run dev:phone` publishes the Vite dev s
 1. Install Tailscale on the computer and on the phone (same account); in the admin console enable **MagicDNS** and
    **HTTPS Certificates**. If `tailscale serve` is refused, allow your user once with
    `sudo tailscale set --operator=$USER`.
-2. In mtg_ledger_core's `.env` allow the tailnet name (`<pc>.<tailnet>.ts.net`, shown by `tailscale status`) and start
+2. In cardledger_core's `.env` allow the tailnet name (`<pc>.<tailnet>.ts.net`, shown by `tailscale status`) and start
    `uv run python manage.py runserver`:
    ```
    DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,<pc>.<tailnet>.ts.net
@@ -91,5 +91,5 @@ Open the camera with `?debug=1` (e.g. `/scan/<session>/?debug=1`) to see the liv
 
 ## Release
 
-mtg_ledger_core includes this repo as a git submodule and builds the UI itself. To ship a version, tag it here
-(`vX.Y.Z`) and point the submodule in mtg_ledger_core at that commit.
+cardledger_core includes this repo as a git submodule and builds the UI itself. To ship a version, tag it here
+(`vX.Y.Z`) and point the submodule in cardledger_core at that commit.

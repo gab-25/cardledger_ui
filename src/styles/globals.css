@@ -1,4 +1,4 @@
-/* MTG Ledger's look on Tailwind v4 + shadcn/ui. */
+/* CardLedger's look on Tailwind v4 + shadcn/ui. */
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -6,7 +6,7 @@
 /* The app is dark only: shadcn's `dark:` variants always apply. */
 @custom-variant dark (&);
 
-/* Colors are defined straight as --color-* tokens, with shadcn's names and MTG Ledger's own. */
+/* Colors are defined straight as --color-* tokens, with shadcn's names and CardLedger's own. */
 @theme {
   /* shadcn names */
   --color-background: #121318;
@@ -29,7 +29,7 @@
   --color-ring: #D4B062;
   --color-sidebar: #16171D;
 
-  /* MTG Ledger names */
+  /* CardLedger names */
   --color-surface: #1B1D24;
   --color-surface-2: #22242D;
   --color-line: #262833;

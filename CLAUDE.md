@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The React SPA that is the whole web interface of MTG Ledger. The backend is the sibling repo
-[mtg_ledger_core](https://github.com/gab-25/mtg_ledger_core) (Django), which serves this build on the same origin
+The React SPA that is the whole web interface of CardLedger. The backend is the sibling repo
+[cardledger_core](https://github.com/gab-25/cardledger_core) (Django), which serves this build on the same origin
 (`index.html` for every page URL, assets under `/static/ui/`) and exposes a JSON API under `/api/`. Session login and
-Django CSRF are shared with it. The scan API contract is gab-25/mtg_ledger_core#10.
+Django CSRF are shared with it. The scan API contract is gab-25/cardledger_core#10.
 
 ## Commands
 
@@ -21,8 +21,8 @@ npm run dev                                # Vite on :5173, proxies /api /admin 
 npm run dev:phone                          # same, published over HTTPS on the tailnet (camera needs HTTPS + phone)
 ```
 
-`npm run dev` needs mtg_ledger_core running (`uv run python manage.py runserver` in its checkout), or `DJANGO_URL` in
-`.env` pointing at another backend (default `http://127.0.0.1:8000`; e.g. production); `VITE_PORT` sets Vite's. CI (`.github/workflows/tests.yml`) runs `npm ci`, `typecheck`, `test`; mtg_ledger_core
+`npm run dev` needs cardledger_core running (`uv run python manage.py runserver` in its checkout), or `DJANGO_URL` in
+`.env` pointing at another backend (default `http://127.0.0.1:8000`; e.g. production); `VITE_PORT` sets Vite's. CI (`.github/workflows/tests.yml`) runs `npm ci`, `typecheck`, `test`; cardledger_core
 includes this repo as a git submodule and builds the UI itself.
 
 ## Architecture

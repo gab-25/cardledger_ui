@@ -1,4 +1,4 @@
-// fetch wrapper for mtg_ledger_core's JSON API under /api/: same-origin session, Django CSRF, JSON errors.
+// fetch wrapper for cardledger_core's JSON API under /api/: same-origin session, Django CSRF, JSON errors.
 
 const PREFIX = "/api/";
 
@@ -60,7 +60,7 @@ function validationFields(data: ErrorBody): Record<string, string[]> {
   return fields;
 }
 
-// mtg_ledger_core answers errors in DRF's format: {"detail", "code", "help_url"?}, or field messages for validation.
+// cardledger_core answers errors in DRF's format: {"detail", "code", "help_url"?}, or field messages for validation.
 function fail(resp: Response, data: ErrorBody | null): never {
   const fields = data && typeof data.detail !== "string" ? validationFields(data) : undefined;
   const validation = fields ? Object.values(fields).flat().join(" ") : "";

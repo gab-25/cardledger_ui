@@ -55,7 +55,7 @@ describe("Layout", () => {
     renderPage("/nope/");
     expect(await screen.findByRole("heading", { name: "Not found" })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: "Main navigation" })).toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe("Not found · MTG Ledger"));
+    await waitFor(() => expect(document.title).toBe("Not found · CardLedger"));
   });
 
   it("log out ends the session and goes to the login page", async () => {

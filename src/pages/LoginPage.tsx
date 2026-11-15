@@ -64,7 +64,7 @@ export default function LoginPage() {
       <form method="post" className={cn(PANEL, "w-full max-w-[400px]")} onSubmit={submit}>
         <div className="flex items-center gap-3 text-foreground">
           <Logo />
-          <span className="font-serif text-[22px] font-bold tracking-[.2px]">MTG Ledger</span>
+          <span className="font-serif text-[22px] font-bold tracking-[.2px]">CardLedger</span>
         </div>
         <Errors errors={fieldErrors(error, "non_field_errors") ?? generic} />
         <div className="grid grid-cols-1 gap-[18px]">
