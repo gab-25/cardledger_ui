@@ -29,7 +29,7 @@ describe("LoginPage", () => {
     await signIn("nope");
     expect(await screen.findByText(/Please enter a correct username and password/)).toBeInTheDocument();
     expect(account.login).toHaveBeenCalledWith("gab", "nope");
-    expect(document.title).toBe("Sign in · MTG Ledger");
+    expect(document.title).toBe("Sign in · CardLedger");
   });
 
   it("goes back to next after login", async () => {

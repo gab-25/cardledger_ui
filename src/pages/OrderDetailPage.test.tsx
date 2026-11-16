@@ -46,7 +46,7 @@ describe("OrderDetailPage", () => {
     expect(within(table).getByRole("link", { name: "in Ledger" })).toHaveAttribute("href", "/?edit=9");
     expect(within(table).getAllByText("—")).toHaveLength(2);
     expect(screen.getByText("€12.34", { selector: "strong" })).toBeInTheDocument();
-    expect(document.title).toBe("Order #c5 · MTG Ledger");
+    expect(document.title).toBe("Order #c5 · CardLedger");
   });
 
   it("the packing checkboxes tick and untick", async () => {

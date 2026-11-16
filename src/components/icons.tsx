@@ -1,4 +1,4 @@
-// SVG icons of the sidebar and pages (from mtg_ledger_core's former templates).
+// SVG icons of the sidebar and pages (from cardledger_core's former templates).
 
 import type { ReactNode } from "react";
 

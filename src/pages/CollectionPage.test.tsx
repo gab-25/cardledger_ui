@@ -63,7 +63,7 @@ describe("CollectionPage", () => {
     expect(screen.getByRole("link", { name: "Export CSV" })).toHaveAttribute("href", "/api/collection/export/");
     expect(screen.getByRole("link", { name: "Scan cards" })).toHaveAttribute("href", "/scan/");
     expect(screen.getByRole("link", { name: "Add cards" })).toHaveAttribute("href", "/catalog/");
-    expect(document.title).toBe("Collection · MTG Ledger");
+    expect(document.title).toBe("Collection · CardLedger");
   });
 
   it("shows a thumbnail that opens the card enlarged", async () => {

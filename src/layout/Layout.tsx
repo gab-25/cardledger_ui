@@ -47,7 +47,7 @@ export default function Layout() {
       <header className="flex items-center justify-between gap-3 px-4 pt-3 pb-1 min-[840px]:hidden print:hidden">
         <Link className="flex items-center gap-2.5 text-foreground no-underline hover:text-foreground" to="/">
           <Logo />
-          <span className="font-serif text-xl font-bold tracking-[.2px]">MTG Ledger</span>
+          <span className="font-serif text-xl font-bold tracking-[.2px]">CardLedger</span>
         </Link>
         <Link
           className="inline-flex size-11 items-center justify-center rounded-full bg-gold-bg font-serif text-base font-bold text-gold no-underline hover:text-gold-hi"
@@ -69,7 +69,7 @@ export default function Layout() {
         <Link className="flex items-center gap-3 px-2 text-foreground no-underline hover:text-foreground max-[839px]:hidden" to="/">
           <Logo />
           <span className="flex flex-col">
-            <span className="font-serif text-[22px] font-bold tracking-[.2px]">MTG Ledger</span>
+            <span className="font-serif text-[22px] font-bold tracking-[.2px]">CardLedger</span>
             <span className="font-mono text-[11px] text-placeholder">v{__APP_VERSION__}</span>
           </span>
         </Link>

@@ -68,7 +68,7 @@ function Profile({ me: { user }, account }: { me: Me; account: Account }) {
       <section className={SECTION} aria-labelledby="session-title">
         <h2 id="session-title" className={H2}>Session</h2>
         <Card className="flex-row flex-wrap items-center justify-between gap-4 px-6 py-5">
-          <div className={cn(HINT, "flex-[1_1_200px]")}>Sign out of MTG Ledger on this device.</div>
+          <div className={cn(HINT, "flex-[1_1_200px]")}>Sign out of CardLedger on this device.</div>
           <form method="post" className="m-0" onSubmit={(e) => { e.preventDefault(); signOut(); }}>
             <Button type="submit" variant="danger">Log out</Button>
           </form>
